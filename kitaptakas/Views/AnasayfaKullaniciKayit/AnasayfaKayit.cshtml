@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "AnasayfaKayit";
+    Layout = "~/Views/Shared/_anasayfaLayout.cshtml";
+}
+@model kitaptakas.Models.Kullanicilar
+<div class="form-grids row widget-shadow" data-example-id="basic-forms">
+    <div class="form-title">
+        <h2>KAYIT OL</h2>
+    </div>
+    <div class="form-body">
+        @if (ViewBag.Sonuc != null)
+            {
+            <div class="alert alert-info">
+                @ViewBag.Sonuc
+            </div>
+        }
+        
+@using (Html.BeginForm("AnasayfaKayit", "AnasayfaKullaniciKayit", FormMethod.Post,new { enctype="multipart/form-data"}))
+{<form>
+
+          <div class="form-group">
+         <input type="hidden" class="form-control" name="yetkiID" value="2">
+           </div>
+     <div class="form-group">
+         <label for="checkbox" class="control-label"></label>
+         <div class="checkbox-inline1"><label>
+             <input type="hidden"> Kullanıcı:</label></div>
+     </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ad</label>
+                <input type="text" class="form-control" name="kullaniciAdi" placeholder="Ad">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Soyad</label>
+                 <input type="text" class="form-control" name="kullaniciSoyadi" placeholder="Soyad">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control"  name="eMail"  id="exampleInputEmail1" placeholder="Email">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Telefon</label>
+                 <input type="text" class="form-control" name="telefon"  placeholder="Telefon">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Adres</label>
+                 <input type="text" class="form-control" name="adres"  placeholder="Adres">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Şifre</label>
+                 <input type="password" class="form-control" name="sifre"  id="exampleInputPassword1" placeholder="Şifre">
+            </div>
+     <div class="form-group">
+         <label for="exampleInputPassword1">Cinsiyet</label>
+         @Html.ValidationSummary()
+         <p>Erkek :@Html.RadioButton("cinsiyet", "0")</p>
+         <p>Kadın :@Html.RadioButton("cinsiyet", "1")</p>
+         </div>
+
+         @*<div class="form-group">
+                <label>Cinsiyet</label>
+                  <input type="hidden" class="form-control" name="cinsiyet" value="0">
+            </div>*@
+
+
+         <div class="form-group">
+             <label for="exampleInputFile">Resim Ekle</label>
+             <input type="file" name="resimGelen">
+         </div>
+         <div class="form-group">
+             <button type="submit" class="btn btn-success pull-right">Kaydol</button>
+         </div>
+</form>
+}
+        
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@model List<kitaptakas.Models.Kullanicilar>
+<div class="card card-primary">
+    <div class="panel-body widget-shadow">
+        <h4>Adminler:</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                
+                    <th>Admin Adı </th>
+                    <th>Admin Soyadı</th>
+                    <th>Email</th>
+                    <th>Şifre</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int i = 1;}
+                @foreach (var admin in Model)
+                {
+                    
+                    <tr>
+
+                        <td>@i.ToString()</td>
+                        <td>@admin.kullaniciAdi</td>
+                        <td>@admin.kullaniciSoyadi</td>
+                        <td>@admin.eMail</td> 
+                        <td>@admin.sifre</td>
+                        <td><a href="/Admin/AdminSil/@admin.kullaniciID" class="btn btn-sm btn-danger " title="Sil"><i class="fa fa-minus"></i></a>
+                        <a href="/Admin/AdminDuzenle/@admin.kullaniciID" class="btn btn-sm btn-warning" title="Düzenle" ><i class="fa fa-edit"></i></a> 
+                        </td>
+                        
+            </tr>
+                    i++;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

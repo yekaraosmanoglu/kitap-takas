@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "AdminEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model kitaptakas.Models.Kullanicilar
+
+@using (Html.BeginForm("AdminEkle", "Admin", FormMethod.Post))
+{
+
+<div class="form-body">
+    <form class="form-horizontal"> 
+    <div class="form-group"> 
+        <label for="inputEmail3" class="col-sm-2 control-label">Admin Adı</label> 
+        <div class="col-sm-9"> 
+      @Html.TextBoxFor(x=> x.kullaniciAdi , new {@class= "form-control", @placeholder="Ad" })
+         </div>
+         </div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Soyad</label>
+            <div class="col-sm-9">
+                @Html.TextBoxFor(x => x.kullaniciSoyadi, new { @class = "form-control", @placeholder = "Soyad" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-9">
+                @Html.TextBoxFor(x => x.eMail, new { @class = "form-control", @placeholder = "Email", @type="email" })
+            </div>
+        </div>
+     <div class="form-group"> 
+        <label for="inputPassword3" class="col-sm-2 control-label">Password</label> 
+        <div class="col-sm-9">
+            @Html.TextBoxFor(x => x.sifre, new { @class = "form-control", @placeholder = "Sifre", @type="password" })
+         </div>
+         </div>
+
+        <div class="form-group">
+            <input type="hidden" class="form-control" name="yetkiID" value="1">
+        </div>
+     
+    </form>
+    <div class="col-sm-offset-3">
+        <button type="submit" class="btn btn-success pull-left"><i class="fa fa-plus"></i> Ekle</button>
+    </div> 
+</div>
+
+
+}
+

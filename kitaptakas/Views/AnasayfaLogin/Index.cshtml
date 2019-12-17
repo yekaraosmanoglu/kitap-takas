@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_anasayfaLayout.cshtml";
+}
+
+<div class="login">
+    <div class="container">
+        <h2>Giriş Yap</h2>
+
+        <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
+            @if (ViewBag.Hata != null)
+            {
+                <div class="alert alert-info">
+                    @ViewBag.Hata
+                </div>
+            }
+
+
+            @using (Html.BeginForm())
+            {<form>
+                <input type="email" class="form-control" placeholder="Email Adres" name="mail" />
+                <input type="password" class="form-control" placeholder="Şifre" name="sifre" />
+                <button type="submit" class="btn btn-primary"> Giriş</button>
+            </form>
+            }
+
+        </div>
+
+    </div>
+</div>

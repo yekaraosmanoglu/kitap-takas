@@ -1,0 +1,154 @@
+﻿<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Novus Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Blank Page :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Novus Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="/Content/tema/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="/Content/tema/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- font CSS -->
+    <!-- font-awesome icons -->
+    <link href="/Content/tema/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- js-->
+    <script src="/Content/tema/js/jquery-1.11.1.min.js"></script>
+    <script src="/Content/tema/js/modernizr.custom.js"></script>
+    <!--webfonts-->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <!--//webfonts-->
+    <!--animate-->
+    <link href="/Content/tema/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/Content/tema/js/wow.min.js"></script>
+    <script>
+		 new WOW().init();
+    </script>
+    <script src="/Content/tema/js/Chart.js"></script>
+    <!--//end-animate-->
+    <!-- Metis Menu -->
+    <script src="/Content/tema/js/metisMenu.min.js"></script>
+    <script src="/Content/tema/js/custom.js"></script>
+    <link href="/Content/tema/css/custom.css" rel="stylesheet">
+    <!--//Metis Menu -->
+</head>
+<body class="cbp-spmenu-push">
+    <div class="main-content">
+        <!--left-fixed -navigation-->
+        <div class=" sidebar" role="navigation">
+            <div class="navbar-collapse">
+                <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                    <ul class="nav" id="side-menu">
+
+    <li>
+        <a href="/Admin/Index"><i class="fa fa-home nav_icon"></i>Anasayfa</a>
+    </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-users nav_icon"></i>Adminler<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="/Admin/Index"><i class="fa fa-users nav_icon"></i>Adminler</a>
+                                </li>
+                                <li>
+                                    <a href="/Admin/AdminEkle"><i class="fa fa-plus nav_icon"></i>Admin Ekle</a>
+                                </li>
+                            </ul>
+                            <!-- /nav-second-level -->
+                        </li>
+    <li>
+        
+    </li>
+
+    <li>
+        
+    </li>
+
+    <li>
+        <a href="/Admin/KullaniciListele"><i class="fa fa-cogs nav_icon"></i>Kullanıcılar</a>
+    </li>
+
+
+
+</ul>
+                    <div class="clearfix"> </div>
+                    <!-- //sidebar-collapse -->
+                </nav>
+            </div>
+        </div>
+        <!--left-fixed -navigation-->
+        <!-- header-starts -->
+      
+        <div style="background-color:#4F52BA;" class="sticky-header header-section ">
+            <div class="header-left">
+                <!--toggle button start-->
+                <button style="background-color:#4F52BA;color:white;" id="showLeftPush"><i class="fa fa-bars "></i></button>
+                <!--toggle button end-->
+                <!--logo -->
+                <div  style="background-color:#4F52BA;"  class="logo">
+                    <a href="index.html">
+                        <h1>KİTAP TAKAS</h1>
+                        @{ kitaptakas.Models.Kullanicilar k = new kitaptakas.Models.Kullanicilar();
+                            k = (kitaptakas.Models.Kullanicilar)Session["kullanici"]; }
+                        <span>@k.kullaniciAdi @k.kullaniciSoyadi</span>
+                    </a>
+                </div>
+                <!--//logo-->
+              
+                <div class="clearfix"> </div>
+            </div>
+            
+            <div class="clearfix"> </div>
+        </div>
+        <!-- //header-ends -->
+        <!-- main content start-->
+        
+        <div id="page-wrapper">
+        @RenderBody()
+            <div class="main-page">
+               
+            </div>
+        </div>
+        <!--footer-->
+        <div class="footer">
+            <p>&copy; Yunus Emre & Eda <a href="#" target="_blank"></a></p>
+        </div>
+        <!--//footer-->
+    </div>
+    <!-- Classie -->
+    <script src="/Content/tema/js/classie.js"></script>
+    <script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				showLeftPush = document.getElementById( 'showLeftPush' ),
+				body = document.body;
+
+			showLeftPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toright' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeftPush' );
+			};
+
+			function disableOther( button ) {
+				if( button !== 'showLeftPush' ) {
+					classie.toggle( showLeftPush, 'disabled' );
+				}
+			}
+    </script>
+    <!--scrolling js-->
+    <script src="/Content/tema/js/jquery.nicescroll.js"></script>
+    <script src="/Content/tema/js/scripts.js"></script>
+    <!--//scrolling js-->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/Content/tema/js/bootstrap.js"> </script>
+</body>
+</html>
